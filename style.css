@@ -1,0 +1,253 @@
+/* --- VARIABEL WARNA --- */
+:root {
+    --pink-dark: #ff85a2;
+    --pink-medium: #fca3b7;
+    --pink-light: #ffe5ec;
+    --white: #ffffff;
+    --text-color: #4a4a4a;
+    --accent-shopee: #ff4500;
+}
+
+/* --- RESET & GLOBAL STYLE --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Kursor Kustom Gambar Hati Lucu */
+    cursor: url('https://cdn-icons-png.flaticon.com/32/833/833472.png'), auto !important;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(135deg, var(--white), var(--pink-light));
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Fredoka', sans-serif;
+    color: #d1496a;
+}
+
+/* --- BACKGROUND ANIMASI PARTIKEL --- */
+.falling-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* --- HEADER --- */
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-bottom: 3px dashed var(--pink-medium);
+    position: relative;
+    z-index: 10;
+    animation: fadeInDown 1s ease-out;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px var(--white);
+    animation: floatAnimation 3s ease-in-out infinite;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- CONTAINER UTAMA --- */
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- GRID LAYOUT --- */
+.grid-skincare {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+}
+
+/* --- KARTU PRODUK --- */
+.card {
+    background: var(--white);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(255, 133, 162, 0.15);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: var(--pink-medium);
+    box-shadow: 0 20px 40px rgba(255, 133, 162, 0.3);
+}
+
+/* Image Container */
+.image-container {
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    border-bottom: 3px solid var(--pink-light);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* Badge Kategori */
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    z-index: 5;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.badge-cleanser { background-color: #ff85a2; }
+.badge-toner { background-color: #a8dadc; color: #1d3557; }
+.badge-moist { background-color: #bde0fe; color: #1d3557; }
+.badge-sun { background-color: #ffca3a; color: #5c4100; }
+
+/* Card Content */
+.card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.card-content h3 {
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #d1496a;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* --- TOMBOL SHOPEE GRADASI --- */
+.btn-shopee {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(45deg, var(--accent-shopee), var(--pink-dark));
+    color: white;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 5px 15px rgba(255, 69, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-shopee:hover {
+    background: linear-gradient(45deg, var(--pink-dark), var(--accent-shopee));
+    box-shadow: 0 8px 25px rgba(255, 69, 0, 0.5);
+    transform: scale(1.05);
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--pink-light);
+    font-size: 1rem;
+    color: #8a5a65;
+    border-top: 3px dashed var(--pink-medium);
+    position: relative;
+    z-index: 10;
+}
+
+/* --- KEYFRAMES ANIMASI --- */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatAnimation {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Efek partikel jatuh */
+.heart-particle {
+    position: absolute;
+    animation: fallAnimation linear infinite;
+    pointer-events: none;
+    user-select: none;
+    z-index: 2;
+}
+
+@keyframes fallAnimation {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(105vh) rotate(360deg);
+        opacity: 0;
+    }
+}
